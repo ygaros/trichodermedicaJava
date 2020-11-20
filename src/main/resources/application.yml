@@ -1,0 +1,63 @@
+kontakt:
+  email: trichodermedica@gmail.com
+  telefon: +48 798 208 775
+  zipCode: 41-205
+  street: Staropogańska
+  houseNumber: 14/1
+  city: Sosnowiec
+spring:
+  http:
+    log-request-details: true
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: none
+  mail:
+    host: smtp.gmail.com
+    port: 465
+    username: javamailsenderclasskuba@gmail.com
+    password: ${FOO_BAR}
+    protocol: smtps
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+file:
+  root:
+    path: storage
+security:
+  jwt:
+    token:
+      secret-key: ${JWT_SECRET}
+      accessTokenCookieName: accessToken
+      refreshTokenCookieName: refreshToken
+      expiration: ${JWT_EXP}
+      refresh:
+        expiration: ${JWT_REF_EXP}
+navbar: Strona Główna, O Mnie, Zabieg, Preparaty trychologiczne, Cennik, Bon Podarunkowy, Kontakt
+custom:
+  header:
+    name: bumcyfykszy
+godziny:
+  otwarcia:
+    first: 09:00, 10:00, 09:00, 10:00, 09:00
+    second: 16:00, 18:00, 16:00, 18:00, 16:00
+logging:
+  level:
+    web: DEBUG
+server:
+  ssl:
+    key-store-type: JKS
+    key-store: classpath:trychologypage.jks
+    key-store-password: trychologypage
+    key-alias: trychologypage
+
+
